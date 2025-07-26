@@ -45,8 +45,6 @@ class List{
 
     }
 
-
-
 public class Deleteatbegin {
      public static void main(String[] args)
     {
