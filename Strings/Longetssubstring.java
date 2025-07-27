@@ -21,7 +21,7 @@ public class Longetssubstring {
         {
             longest=current;
         }
-         System.out.println(longest);
+         System.out.println(longest.length());
          
     }
 }
