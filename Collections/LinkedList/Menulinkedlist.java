@@ -72,6 +72,26 @@ class List {
         }
         temp.next = null;
     }
+    void Search(int data)
+    {
+         if (head == null) {
+            System.out.println("List is empty");
+            return;
+        }
+        ListNode temp = head;
+        int pos=1;
+        while (temp != null) {
+            if(temp.data==data)
+            {
+                System.out.println(pos); 
+                
+            }pos++;
+           temp=temp.next;
+        }
+        System.out.println("-1");
+        
+    }
+     
 }
 
 public class Menulinkedlist {
@@ -86,8 +106,9 @@ public class Menulinkedlist {
             System.out.println("2. Insert at End");
             System.out.println("3. Delete from Beginning");
             System.out.println("4. Delete from End");
-            System.out.println("5. Traversal");
-            System.out.println("6. Exit");
+            System.out.println("5.Search");
+            System.out.println("6. Traversal");
+            System.out.println("7. Exit");
             System.out.print("Enter your choice: ");
             choice = sc.nextInt();
 
@@ -113,20 +134,24 @@ public class Menulinkedlist {
                     ob.Delete_from_end();
                     System.out.println("Deleted node from end");
                     break;
-
                 case 5:
+                    System.out.println("search");
+                    data=sc.nextInt();
+                    ob.Search(data);
+                    break;
+                case 6:
                     System.out.println("Linked List:");
                     ob.traversal();
                     break;
 
-                case 6:
+                case 7:
                     System.out.println("Exiting...");
                     break;
 
                 default:
-                    System.out.println("Invalid choice! Please enter between 1 and 6.");
+                    System.out.println("Invalid choice! Please enter between 1 and 7.");
             }
-        } while (choice != 6);
+        } while (choice != 7);
 
         sc.close();
     }
