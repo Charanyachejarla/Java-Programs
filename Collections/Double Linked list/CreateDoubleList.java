@@ -144,7 +144,7 @@ class List{
             }
             ListNode temp=head;
         int count=1;
-        while(count<pos-1 && temp!=null)
+        while(count<pos && temp!=null)
         {
             temp=temp.next;
             count++;
@@ -154,8 +154,15 @@ class List{
             System.out.println("out of range");
             return;
         }
-        temp.next.next.prev=temp.next;
-        temp.next=temp.next.next;
+        if(temp.prev!=null)
+        {
+            temp.prev.next=temp.next;
+        }
+        if(temp.next!=null)
+        {
+            temp.next.prev=temp.prev;
+        }
+       
         }
 
     }
@@ -189,7 +196,7 @@ public class CreateDoubleList {
         ob.traversal();
 
         System.out.println();
-        ob.delete_at_pos(1);
+        ob.delete_at_pos(4);
         ob.traversal();
     }
 }
